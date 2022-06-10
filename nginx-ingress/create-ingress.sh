@@ -9,7 +9,7 @@ cp ../examples/appprotect/ap-logconf.yaml .
 cp ../examples/appprotect/ap-dataguard-alarm-policy.yaml .
 cp ../examples/appprotect/ap-apple-uds.yaml .
 cp ../examples/appprotect/ap-apple-uds.yaml .
-wget https://raw.githubusercontent.com/carloszoghbi/kubernetes-aws/main/nginx-ingress/config/nginx-config.yaml
+wget https://raw.githubusercontent.com/carloshzoghbi/kubernetes-aws/main/nginx-ingress/config/nginx-config.yaml
 kubectl apply -f common/ns-and-sa.yaml
 kubectl apply -f rbac/rbac.yaml
 kubectl apply -f rbac/ap-rbac.yaml
