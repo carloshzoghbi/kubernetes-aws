@@ -1,12 +1,12 @@
 #!/bin/sh
-git clone https://github.com/nginxinc/kubernetes-ingress/
+git clone https://github.com/carloshzoghbi/kubernetes-ingress
 cd kubernetes-ingress/deployments
 git checkout v2.1.1
 #Set up files
 cp ../examples/complete-example/cafe.yaml .
 cp ../examples/complete-example/cafe-secret.yaml .
-wget https://raw.githubusercontent.com/laul7klau/kubernetes-aws/main/nginx-ingress/config/cafe-ingress.yaml
-wget https://raw.githubusercontent.com/laul7klau/kubernetes-aws/main/nginx-ingress/config/nginx-config.yaml
+wget https://raw.githubusercontent.com/carloshzoghbi/kubernetes-aws/main/nginx-ingress/config/cafe-ingress.yaml
+wget https://raw.githubusercontent.com/carloshzoghbi/kubernetes-aws/main/nginx-ingress/config/nginx-config.yaml
 #Install Ingress Controller per https://docs.nginx.com/nginx-ingress-controller/installation/installation-with-manifests/
 kubectl apply -f common/ns-and-sa.yaml
 kubectl apply -f rbac/rbac.yaml
@@ -33,4 +33,3 @@ kubectl create -f cafe-secret.yaml
 kubectl create -f cafe-ingress.yaml
 
 kubectl get svc -n nginx-ingress
-echo "\n\n\nRun dig <hostname>.us-west-2.elb.amazonaws.com to get public IP address of AWS LB. Impt: Wait 30s-60s for AWS DNS to update."
