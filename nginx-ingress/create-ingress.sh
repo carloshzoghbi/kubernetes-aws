@@ -1,7 +1,7 @@
 #!/bin/sh
 git clone https://github.com/nginxinc/kubernetes-ingress/
 cd kubernetes-ingress/deployments
-git checkout v1.11.1
+git checkout v2.1.1
 #Set up files
 cp ../examples/complete-example/cafe.yaml .
 cp ../examples/complete-example/cafe-secret.yaml .
@@ -22,7 +22,7 @@ kubectl apply -f common/crds/k8s.nginx.org_policies.yaml
 kubectl apply -f common/crds/k8s.nginx.org_globalconfigurations.yaml
 kubectl apply -f common/global-configuration.yaml
 #Install Ingress Controller pods as daemonset
-kubectl apply -f daemon-set/nginx-ingress.yaml
+kubectl apply -f daemon-set/nginx-plus-ingress.yaml
 #Exposing service as nodeport and creating AWS loadbalancer
 #kubectl create -f service/nodeport.yaml
 
