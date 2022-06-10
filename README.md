@@ -83,7 +83,7 @@ Select the nodegroup stacks, select Delete.
 Select the Kubernetes cluster, select Delete.  
 
 ## What's next:  
-- Go to the sub directory, [nginx-ingress](https://github.com/laul7klau/kubernetes-aws/tree/main/nginx-ingress), to create NGINX Ingress Controller.    
+- Go to the sub directory, [nginx-ingress](https://github.com/carloshzoghbi/kubernetes-aws/tree/main/nginx-ingress), to create NGINX Ingress Controller.    
 OR
-- Go to the sub directory [bigip-ctrl-ingress](https://github.com/laul7klau/kubernetes-aws/tree/main/bigip-ctrl-ingress) to create the BIG-IP Controller Ingress Service, CIS.  
+- Go to the sub directory [bigip-ctrl-ingress](https://github.com/carloshzoghbi/kubernetes-aws/tree/main/bigip-ctrl-ingress) to create the BIG-IP Controller Ingress Service, CIS.  
   -  Then go to the sub-sub directory *Ingress link*, to create the NGINX Ingress Controller and F5 Ingress Link.  
