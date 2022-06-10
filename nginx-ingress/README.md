@@ -9,7 +9,7 @@ You must run the commands in the parent directory *kubernetes-aws* first to depl
 
 ## Steps:  
 Copy and run the commands below:   
-``wget https://raw.githubusercontent.com/laul7klau/kubernetes-aws/main/nginx-ingress/create-ingress.sh``    
+``wget https://raw.githubusercontent.com/carloszoghbi/kubernetes-aws/main/nginx-ingress/create-ingress.sh``    
 ``chmod u+x create-ingress.sh``   
 ``./create-ingress.sh``     
 
