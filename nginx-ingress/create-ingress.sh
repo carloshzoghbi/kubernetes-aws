@@ -21,7 +21,6 @@ kubectl apply -f common/crds/k8s.nginx.org_virtualserverroutes.yaml
 kubectl apply -f common/crds/k8s.nginx.org_transportservers.yaml
 kubectl apply -f common/crds/k8s.nginx.org_policies.yaml
 kubectl apply -f common/crds/k8s.nginx.org_globalconfigurations.yaml
-kubectl apply -f common/global-configuration.yaml
 kubectl apply -f common/crds/appprotect.f5.com_aplogconfs.yaml
 kubectl apply -f common/crds/appprotect.f5.com_appolicies.yaml
 kubectl apply -f common/crds/appprotect.f5.com_apusersigs.yaml
