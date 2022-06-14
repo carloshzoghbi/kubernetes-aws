@@ -2,7 +2,6 @@
 git clone https://github.com/carloshzoghbi/kubernetes-ingress
 cd kubernetes-ingress/deployments
 git checkout v2.1.1
-git switch main
 cp ../examples/appprotect/cafe.yaml .
 cp ../examples/appprotect/cafe-secret.yaml .
 cp ../examples/appprotect/cafe-ingress.yaml .
