@@ -50,10 +50,10 @@ This is a step by step guide to deploy BIG-IP Container Ingress Service, CIS. Th
 #### Configure the CIS deployment files:  
 1. Copy and paste the following commands:   
 
-     ``wget https://raw.githubusercontent.com/laul7klau/kubernetes-aws/main/bigip-ctrl-ingress/config/cis-deployment.yaml``  
-     ``wget https://raw.githubusercontent.com/laul7klau/kubernetes-aws/main/bigip-ctrl-ingress/config/as3.yaml``  
-     ``wget https://raw.githubusercontent.com/laul7klau/kubernetes-aws/main/bigip-ctrl-ingress/config/f5-hello-world-deployment.yaml``  
-     ``wget https://raw.githubusercontent.com/laul7klau/kubernetes-aws/main/bigip-ctrl-ingress/config/f5-hello-world-service.yaml``  
+     ``wget https://raw.githubusercontent.com/carloshzoghbi/kubernetes-aws/main/bigip-ctrl-ingress/config/cis-deployment.yaml``  
+     ``wget https://raw.githubusercontent.com/carloshzoghbi/kubernetes-aws/main/bigip-ctrl-ingress/config/as3.yaml``  
+     ``wget https://raw.githubusercontent.com/carloshzoghbi/kubernetes-aws/main/bigip-ctrl-ingress/config/f5-hello-world-deployment.yaml``  
+     ``wget https://raw.githubusercontent.com/carloshzoghbi/kubernetes-aws/main/bigip-ctrl-ingress/config/f5-hello-world-service.yaml``  
 
 2. Edit the following 2 files:  
    -- **cis-deployment.yaml**:  
@@ -79,7 +79,7 @@ This is a step by step guide to deploy BIG-IP Container Ingress Service, CIS. Th
 
 2. Copy and paste the following commands:     
 
-    ``kubectl create -f https://raw.githubusercontent.com/laul7klau/kubernetes-aws/main/bigip-ctrl-ingress/config/bigip-ctlr-clusterrole.yaml``  
+    ``kubectl create -f https://raw.githubusercontent.com/carloshzoghbi/kubernetes-aws/main/bigip-ctrl-ingress/config/bigip-ctlr-clusterrole.yaml``  
 
     ``kubectl create -f cis-deployment.yaml``  
 
@@ -115,7 +115,7 @@ Replace
   [...]   
 
 ## What's next:  
-Go to the sub directory [*ingresslink*](https://github.com/laul7klau/kubernetes-aws/tree/main/bigip-ctrl-ingress/ingressLink), to create NGINX ingress controller and F5 Ingress Link.  
+Go to the sub directory [*ingresslink*](https://github.com/carloshzoghbi/kubernetes-aws/tree/main/bigip-ctrl-ingress/ingressLink), to create NGINX ingress controller and F5 Ingress Link.  
 
 ## Destroy
 1. Copy and paste the following commands:  
@@ -124,7 +124,7 @@ Go to the sub directory [*ingresslink*](https://github.com/laul7klau/kubernetes-
     ``kubectl delete -f f5-hello-world-deployment.yaml``  
     ``kubectl delete -f f5-hello-world-service.yaml``   
     ``kubectl delete -f cis-deployment.yaml``  
-    ``kubectl delete -f https://raw.githubusercontent.com/laul7klau/kubernetes-aws/main/bigip-ctrl-ingress/config/bigip-ctlr-clusterrole.yaml``  
+    ``kubectl delete -f https://raw.githubusercontent.com/carloshzoghbi/kubernetes-aws/main/bigip-ctrl-ingress/config/bigip-ctlr-clusterrole.yaml``  
     ``kubectl delete secret f5-bigip-ctlr-login -n kube-system``  
  
 2. On AWS portal, destroy the BIG-IP stack.  
