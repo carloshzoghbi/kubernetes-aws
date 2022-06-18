@@ -6,6 +6,8 @@ metadata:
   labels:
     app: ingresslink
 spec:
+  externalTrafficPolicy: Local
+  type: LoadBalancer
   ports:
   - port: 80
     targetPort: 80
