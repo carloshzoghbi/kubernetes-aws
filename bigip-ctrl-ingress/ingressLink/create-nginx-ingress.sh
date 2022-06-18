@@ -11,11 +11,12 @@ cp ../examples/appprotect/ap-dataguard-alarm-policy.yaml .
 cp ../examples/appprotect/ap-apple-uds.yaml .
 https://raw.githubusercontent.com/carloshzoghbi/kubernetes-aws/main/bigip-ctrl-ingress/ingressLink/config/nodeport.yaml
 https://raw.githubusercontent.com/carloshzoghbi/kubernetes-aws/main/bigip-ctrl-ingress/ingressLink/config/loadbalancer.yaml
+https://raw.githubusercontent.com/carloshzoghbi/kubernetes-aws/main/bigip-ctrl-ingress/ingressLink/config/nginx-config.yaml
 kubectl apply -f common/ns-and-sa.yaml
 kubectl apply -f rbac/rbac.yaml
 kubectl apply -f rbac/ap-rbac.yaml
 kubectl apply -f common/default-server-secret.yaml
-kubectl apply -f common/nginx-config.yaml
+kubectl apply -f nginx-config.yaml
 kubectl apply -f common/ingress-class.yaml
 kubectl apply -f common/crds/k8s.nginx.org_virtualservers.yaml
 kubectl apply -f common/crds/k8s.nginx.org_virtualserverroutes.yaml
@@ -34,4 +35,3 @@ kubectl create -f ap-dataguard-alarm-policy.yaml
 kubectl create -f ap-apple-uds.yaml
 kubectl create -f cafe-ingress.yaml
 kubectl create -f nodeport.yaml
-
