@@ -10,6 +10,7 @@ cp ../examples/appprotect/ap-logconf.yaml .
 cp ../examples/appprotect/ap-dataguard-alarm-policy.yaml .
 cp ../examples/appprotect/ap-apple-uds.yaml .
 https://raw.githubusercontent.com/carloshzoghbi/kubernetes-aws/main/bigip-ctrl-ingress/ingressLink/config/nodeport.yaml
+https://raw.githubusercontent.com/carloshzoghbi/kubernetes-aws/main/bigip-ctrl-ingress/ingressLink/config/loadbalancer.yaml
 kubectl apply -f common/ns-and-sa.yaml
 kubectl apply -f rbac/rbac.yaml
 kubectl apply -f rbac/ap-rbac.yaml
@@ -25,7 +26,7 @@ kubectl apply -f common/crds/appprotect.f5.com_aplogconfs.yaml
 kubectl apply -f common/crds/appprotect.f5.com_appolicies.yaml
 kubectl apply -f common/crds/appprotect.f5.com_apusersigs.yaml
 kubectl apply -f daemon-set/nginx-plus-ingress.yaml
-kubectl apply -f service/loadbalancer.yaml
+kubectl apply -f loadbalancer.yaml
 kubectl create -f cafe.yaml
 kubectl create -f cafe-secret.yaml
 kubectl create -f ap-logconf.yaml
