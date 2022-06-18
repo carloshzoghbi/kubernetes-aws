@@ -9,12 +9,12 @@ In this section, you create a F5 Ingress Link.
 ![F5 Ingress Link](ingress-link-diagram.png)   
 
 # Pre-requisites:
-- You must have performed all the steps in the parent directory [bigip-ctlr-ingress](https://github.com/laul7klau/kubernetes-aws/tree/main/bigip-ctrl-ingress) to create a BIG-IP instance and BIG-IP Container Ingress Service.  
+- You must have performed all the steps in the parent directory [bigip-ctlr-ingress](https://github.com/carloshzoghbi/kubernetes-aws/tree/main/bigip-ctrl-ingress) to create a BIG-IP instance and BIG-IP Container Ingress Service.  
 - The BIG-IP CIS is working.
 
 # Steps:   
 ## Remove any AS3 and BIG-IP CIS objects. 
-Delete the AS3 and BIG-IP objects created previously in the parent [bigip-ctrl-ingress](https://github.com/laul7klau/kubernetes-aws/tree/main/bigip-ctrl-ingress)directory. Copy and paste the following:   
+Delete the AS3 and BIG-IP objects created previously in the parent [bigip-ctrl-ingress](https://github.com/carloshzoghbi/kubernetes-aws/tree/main/bigip-ctrl-ingress)directory. Copy and paste the following:   
 ``kubectl delete -f as3.yaml``     
 ``sleep 2``   
 ``kubectl delete -f cis-deployment.yaml``   
@@ -22,7 +22,7 @@ Delete the AS3 and BIG-IP objects created previously in the parent [bigip-ctrl-i
 To create F5 Ingress Link, create NGINX ingress controller followed by the BIG-IP Container Ingress Service.  
 ## Create NGINX ingress controller.   
 1. Download and run the *create-nginx-ingress.sh* script.  
-``wget https://raw.githubusercontent.com/laul7klau/kubernetes-aws/main/bigip-ctrl-ingress/ingressLink/create-nginx-ingress.sh``   
+``wget https://raw.githubusercontent.com/carloshzoghbi/kubernetes-aws/main/bigip-ctrl-ingress/ingressLink/create-nginx-ingress.sh``   
    ``chmod u+x create-nginx-ingress.sh``    
    ``./create-nginx-ingress.sh``   
    OR simply copy and paste the commands in the script all together.  
@@ -31,7 +31,7 @@ To create F5 Ingress Link, create NGINX ingress controller followed by the BIG-I
 For F5 Ingress link, the BIG-IP CIS must run in Custom Resource Mode, CRD mode. 
 1. Make a new copy of the cis-deployment file for F5 Ingresslink.  
 ``cp cis-deployment.yaml cis-ingresslink-deployment.yaml``  
-``wget https://raw.githubusercontent.com/laul7klau/kubernetes-aws/main/bigip-ctrl-ingress/ingressLink/config/ingresslink.yaml``    
+``wget https://raw.githubusercontent.com/carloshzoghbi/kubernetes-aws/main/bigip-ctrl-ingress/ingressLink/config/ingresslink.yaml``    
 
 2. Edit  
    - *cis-ingresslink-deployment.yaml*:  
@@ -43,9 +43,9 @@ For F5 Ingress link, the BIG-IP CIS must run in Custom Resource Mode, CRD mode.
    - Follow steps 4 and 5 in [Lab4.1 BIG-IP Setup](https://clouddocs.f5.com/training/community/containers/html/class1/module4/lab1.html) to create the iRule *Proxy_Protocol_iRule* on the BIG-IP instance.  
 4. Copy and paste the following commands:  
 
-   ``wget https://raw.githubusercontent.com/laul7klau/kubernetes-aws/main/bigip-ctrl-ingress/ingressLink/config/customresourcedefinitions.yaml``     
+   ``wget https://raw.githubusercontent.com/carloshzoghbi/kubernetes-aws/main/bigip-ctrl-ingress/ingressLink/config/customresourcedefinitions.yaml``     
 
-   ``wget https://raw.githubusercontent.com/laul7klau/kubernetes-aws/main/bigip-ctrl-ingress/ingressLink/config/ingresslink-customresourcedefinition.yaml``   
+   ``wget https://raw.githubusercontent.com/carloshzoghbi/kubernetes-aws/main/bigip-ctrl-ingress/ingressLink/config/ingresslink-customresourcedefinition.yaml``   
 
    ``kubectl apply -f cis-ingresslink-deployment.yaml``  
    ``kubectl apply -f ingresslink-customresourcedefinition.yaml``    
@@ -62,7 +62,7 @@ NGINX ingress controller, BIG-IP CIS, BIG-IP instance and F5 Ingress link are de
 
 # Destroy:
 1. Download and run the *delete-all.sh* OR copy and paste its commands.   
-   ``wget https://raw.githubusercontent.com/laul7klau/kubernetes-aws/main/bigip-ctrl-ingress/ingressLink/delete-all.sh``    
+   ``wget https://raw.githubusercontent.com/carloshzoghbi/kubernetes-aws/main/bigip-ctrl-ingress/ingressLink/delete-all.sh``    
 2. On AWS portal, destroy the BIG-IP stack.  
    - Go to CloudFormation > Stacks > Name-of-Stack. 
    - Delete.  
