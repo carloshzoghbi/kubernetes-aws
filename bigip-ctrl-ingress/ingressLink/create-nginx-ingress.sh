@@ -9,9 +9,9 @@ cp ../examples/appprotect/cafe-ingress.yaml .
 cp ../examples/appprotect/ap-logconf.yaml .
 cp ../examples/appprotect/ap-dataguard-alarm-policy.yaml .
 cp ../examples/appprotect/ap-apple-uds.yaml .
-https://raw.githubusercontent.com/carloshzoghbi/kubernetes-aws/main/bigip-ctrl-ingress/ingressLink/config/nodeport.yaml
-https://raw.githubusercontent.com/carloshzoghbi/kubernetes-aws/main/bigip-ctrl-ingress/ingressLink/config/loadbalancer.yaml
-https://raw.githubusercontent.com/carloshzoghbi/kubernetes-aws/main/bigip-ctrl-ingress/ingressLink/config/nginx-config.yaml
+wget https://raw.githubusercontent.com/carloshzoghbi/kubernetes-aws/main/bigip-ctrl-ingress/ingressLink/config/nodeport.yaml
+wget https://raw.githubusercontent.com/carloshzoghbi/kubernetes-aws/main/bigip-ctrl-ingress/ingressLink/config/loadbalancer.yaml
+wget https://raw.githubusercontent.com/carloshzoghbi/kubernetes-aws/main/bigip-ctrl-ingress/ingressLink/config/nginx-config.yaml
 kubectl apply -f common/ns-and-sa.yaml
 kubectl apply -f rbac/rbac.yaml
 kubectl apply -f rbac/ap-rbac.yaml
